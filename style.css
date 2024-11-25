@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Plain Light";
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+#loader {
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20vh 10vw;
+  z-index: 999;
+  overflow: hidden;
+}   
+#loader .line{
+    /* background-color: red;    */
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#loader .line #line-part1{
+    display: flex;
+    margin-right: 30px;
+    margin-top: 15px;
+}
+
+#loader .line #line-part1 h4{
+    /* margin-right: 15px; */
+    width: 90px;
+    /* background-color: red; */
+    display: flex;
+    text-align: right;
+}
+#loader .line #line-part1 h4,h5{
+    font-size: 3vw;
+    font-family: "Silk Serif";
+}
+
+#loader .line #line-part2 h5{
+    font-size: 5vw;
+    text-transform: uppercase;
+    /* background-color: red; */
+    display: flex;
+    align-items: start;
+    vertical-align: top;
+   margin-left: 20px;
+   animation-name: anime;
+   animation-duration: 1.6s;
+   animation-iteration-count: infinite;
+
+  }
+  @keyframes anime {
+    0%{
+        font-family: "Plain Light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    } 
+    40%{
+        font-family: "Plain Light";
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    75%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 0.5px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 1;
+    }
+    100%{
+        font-family: "Silk Serif";
+        -webkit-text-stroke: 0.5px #fff;
+        color: transparent;
+        font-weight: 500;
+        opacity: 0;
+    }
+  }
+#loader .line h1 {
+  font-size: 6vw;
+  font-weight: 500;
+  line-height: 8vw;
+  text-transform: uppercase;
+}
+#main {
+  position: relative;
+  width: 100%;
+}
+#page1 {
+  width: 100%;
+  height: 100vh;
+  background-color: #151515;
+}
