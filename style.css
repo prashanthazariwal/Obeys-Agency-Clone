@@ -11,86 +11,96 @@ body {
   height: 100%;
   background-color: black;
 }
+#crsr {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  border: 1px solid #ffffffc7;
+  position: fixed;
+  z-index: 999;
+  mix-blend-mode: difference;
+
+}
 #loader {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #0b0b0b;
   position: fixed;
   top: 0;
   left: 0;
   padding: 20vh 10vw;
-  z-index: 999;
+  z-index: 99999;
   overflow: hidden;
-}   
-#loader .line{
-    /* background-color: red;    */
-    height: fit-content;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
-#loader .line #line-part1{
-    display: flex;
-    margin-right: 30px;
-    margin-top: 15px;
+#loader .line {
+  /* background-color: red;    */
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#loader .line #line-part1 {
+  display: flex;
+  margin-right: 30px;
+  margin-top: 15px;
 }
 
-#loader .line #line-part1 h4{
-    /* margin-right: 15px; */
-    width: 90px;
-    /* background-color: red; */
-    display: flex;
-    text-align: right;
+#loader .line #line-part1 h4 {
+  /* margin-right: 15px; */
+  width: 90px;
+  /* background-color: rgb(0, 255, 200); */
+  display: flex;
+  text-align: right;
 }
-#loader .line #line-part1 h4,h5{
-    font-size: 3vw;
+#loader .line #line-part1 h4,
+h5 {
+  font-size: 3vw;
+  font-family: "Silk Serif";
+}
+
+#loader .line #line-part2 h5 {
+  font-size: 5vw;
+  text-transform: uppercase;
+  /* background-color: rgb(0, 255, 217); */
+  display: flex;
+  align-items: start;
+  vertical-align: top;
+  margin-left: 20px;
+  animation-name: anime;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+}
+@keyframes anime {
+  0% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 1px #fff;
+    color: #fff;
+    font-weight: 500;
+    opacity: 1;
+  }
+  40% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 1px #fff;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0;
+  }
+  75% {
     font-family: "Silk Serif";
+    -webkit-text-stroke: 0.5px #fff;
+    color: transparent;
+    font-weight: 500;
+    opacity: 1;
+  }
+  100% {
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 0.5px #fff;
+    color: transparent;
+    font-weight: 500;
+    opacity: 0;
+  }
 }
-
-#loader .line #line-part2 h5{
-    font-size: 5vw;
-    text-transform: uppercase;
-    /* background-color: red; */
-    display: flex;
-    align-items: start;
-    vertical-align: top;
-   margin-left: 20px;
-   animation-name: anime;
-   animation-duration: 1.6s;
-   animation-iteration-count: infinite;
-
-  }
-  @keyframes anime {
-    0%{
-        font-family: "Plain Light";
-        -webkit-text-stroke: 1px #fff;
-        color: #fff;
-        font-weight: 500;
-        opacity: 1;
-    } 
-    40%{
-        font-family: "Plain Light";
-        -webkit-text-stroke: 1px #fff;
-        color: #fff;
-        font-weight: 500;
-        opacity: 0;
-    }
-    75%{
-        font-family: "Silk Serif";
-        -webkit-text-stroke: 0.5px #fff;
-        color: transparent;
-        font-weight: 500;
-        opacity: 1;
-    }
-    100%{
-        font-family: "Silk Serif";
-        -webkit-text-stroke: 0.5px #fff;
-        color: transparent;
-        font-weight: 500;
-        opacity: 0;
-    }
-  }
 #loader .line h1 {
   font-size: 6vw;
   font-weight: 500;
@@ -98,11 +108,612 @@ body {
   text-transform: uppercase;
 }
 #main {
-  position: relative;
   width: 100%;
+  overflow-x: hidden;
 }
 #page1 {
   width: 100%;
   height: 100vh;
   background-color: #151515;
+}
+
+#page1 #nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.3vw 4.5vw;
+  /* background-color: red; */
+  position: relative;
+}
+
+#navPart2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+#navPart2 a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.hero {
+  width: 60%;
+  margin-left: 28%;
+  overflow: hidden;
+}
+.hero:nth-child(2) {
+  margin-top: 10%;
+}
+
+#hero1::before{
+  content: "01";
+  font-size: 3vw;
+  font-weight: 400;
+  font-family: silk serif;
+  position: absolute;
+  top: 35%;
+  left: 18%;
+}
+#hero3 {
+  display: flex;
+  align-items: center;
+}
+#hero3 h2 {
+  z-index: 1000;
+}
+#hero3 h2:hover {
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  font-weight: 400;
+}
+.hero h2 {
+  font-size: 7vmax;
+  font-weight: 500;
+  line-height: 7vmax;
+  text-transform: uppercase;
+}
+
+#flag {
+  height: 28vw;
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0;
+  transform: translate(-50% , -50%);
+}
+/* page 2 starts */
+#page2 {
+  width: 100%;
+  padding: 10% 0;
+  background-color: #151515;
+}
+
+#page2 #videoContainer {
+  width: 60%;
+  height: 60vh;
+  /* background-color: red; */
+  margin-left: 20%;
+  /* margin-top: 20%; */
+  overflow: hidden;
+}
+
+#page2 #videoContainer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* page2 ends */
+
+#page3 {
+  width: 100%;
+  padding-left: 4rem;
+  /* background-color: red; */
+}
+#page3 #page3head {
+  width: 70%;
+  height: fit-content;
+  /* background-color: red; */
+  margin-left: 25%;
+  padding-top: 8%;
+  position: relative;
+}
+#page3 #page3head h3 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 8%;
+  display: inline-block;
+  position: relative;
+}
+#page3 #page3head h3::before{
+  content: "03";
+  font-size: 3vw;
+  font-weight: 400;
+  font-family: silk serif;
+  position: absolute;
+  top: 10%;
+  left: -25%;
+
+}
+#page3 #page3head #underLine {
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+#page3 .elm{
+  width: 100%;
+  /* height: 65vh; */
+  /* background-color: red; */
+  margin: 10rem 0;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#page3 .elm .imageContainer {
+  width: 25%;
+  flex-shrink: 0;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+#page3 .elm #imageContainer1{
+  height: 70vh
+}
+#page3 .elm #imageContainer2{
+  height: 80vh
+}
+#page3 .elm #imageContainer3{
+  height: 60vh;
+  margin-left: 8rem ;
+  margin-top: 4rem;
+}
+#page3 .elm #imageContainer4{
+  height: 55vh;
+}
+
+#page3 .elm .imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.page3-circle{
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.page3-circle svg{
+  height: 8rem
+}
+.page3-circle .circle-in {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #fff;
+color: black;
+display: flex;
+align-items: center;
+justify-content: center;
+scale: 0;
+border-radius: 50%;
+transition: all ease 0.3s;
+}
+.page3-circle .circle-in p{
+  color: #0b0b0b;
+  font-size: 0.8rem;
+  font-weight:600;
+  max-width: 70%;
+  scale: 0;
+  opacity: 0;
+  transition: all ease 0.3s;
+  transition-delay: 0.3s;
+}
+.page3-circle:hover .circle-in{
+  scale : 1;
+}
+.page3-circle:hover p{
+  scale : 1;
+  opacity: 1;
+}
+#page3-circle1{
+  margin-left: 6rem;
+  margin-top: 8rem;
+}
+#page3-circle2 svg{
+  rotate: -45deg;
+}
+/* page4 starts */
+#page4 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #151515;
+}
+
+#page4 #page4Content {
+  width: 70%;
+  height: fit-content;
+  /* background-color: red; */
+  margin-left: 25%;
+  padding-top: 8%;
+  position: relative;
+}
+
+#page4 #page4Content h3 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 8%;
+  display: inline-block;
+  position: relative;
+}
+#page4 #page4Content h3::before{
+  content: "03";
+  font-size: 3vw;
+  font-weight: 400;
+  font-family: silk serif;
+  position: absolute;
+  top: 10%;
+  left: -25%;
+
+}
+#page4 #page4Content #underLine {
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+
+#page4 #page4Content > p {
+  font-size: 2rem;
+  width: 50%;
+  margin-top: 5%;
+}
+#page4 #page4Content #divFlex {
+  width: 100%;
+  display: flex;
+  margin-top: 8%;
+  gap: 3%;
+}
+#page4 #page4Content #divFlex img {
+  width: 50%;
+}
+#page4 #page4Content #divFlex p {
+  width: 20%;
+}
+#page4 #page4Content #blueDiv {
+  width: 45%;
+  height: fit-content;
+  padding: 6% 3%;
+  background-color: #3f7df4;
+  position: absolute;
+  left: 35%;
+  bottom:10%;
+}
+
+#page4 #page4Content #blueDiv .elm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4%;
+  padding-bottom: 8%;
+  border-bottom: 1px solid #fff;
+}
+#page4 #page4Content #blueDiv .elm span {
+  font-size: 1rem;
+}
+#page4 #page4Content #empty{
+  width: 100%;
+  height: 70vh;
+}
+#page4 #page4Content h4{
+  margin-top: 3%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* page 4 ends */
+
+/* page5 starts */
+#page5{
+  width: 100%;
+  padding: 5% 0;
+  overflow: hidden;
+  background-color: #151515;
+}
+
+#page5 .elm{
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#page5 .elm h2{
+  /* background-color: red; */
+  margin-right: 20px;
+  font-size: 13vh;
+  display: inline-block;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  font-weight: 400;
+  text-transform: uppercase;
+  animation-name: anime2;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite
+}
+#page5 .elm h2 span{
+  font-family: silk serif;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+  font-weight: 400;
+}
+#page5 #elm2 h2 ,#page5 #elm4 h2{
+  animation-name: anime2;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+@keyframes anime2 {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(calc(-100% - 20px) );
+  }
+}
+
+/* footer starts */
+
+#footer{
+  width: 100%;
+  background-color: #151515;
+}
+
+#footer #footerContent {
+  width: 70%;
+  height: fit-content;
+  /* background-color: red; */
+  margin-left: 25%;
+  padding-top: 8%;
+  padding-bottom: 2%;
+  position: relative;
+}
+
+#footer #footerContent h3 {
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 8%;
+  display: inline-block;
+  position: relative;
+}
+
+#footer #footerContent h3::before{
+  content: "04";
+  font-size: 3vw;
+  font-weight: 400;
+  font-family: silk serif;
+  position: absolute;
+  top: 10%;
+  left: -25%;
+
+}
+#footer #footerContent #underLine {
+  width: 100%;
+  border: 1px solid #fff;
+}
+
+#footer #flexdiv {
+  width: 100%;
+  display: flex;
+  padding: 5rem 0;
+  gap: 6%;
+}
+#footer #flexdiv .elm{
+  width: 30%;
+
+}
+#footer #flexdiv .elm h6{
+font-size: 1rem;
+margin-bottom: 1.7rem;
+}
+#footer #flexdiv .elm h5{
+  font-size: 1.6rem;
+  font-family: "Plain Light";
+  font-weight: 500;
+}
+
+
+#footer #footerContent h4{
+  margin-top: 3%;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* shery js canva */
+._canvas_container{
+  z-index: 9999999 !important;
+  pointer-events: none;
+}
+
+@media (max-width : 600px) {
+  #crsr {
+  display: none;
+  
+  }
+  #loader {
+    padding:2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #loader .line #line-part1 {
+    display: flex;
+    margin-right: 30px;
+    margin-top: 15px;
+  }
+  #loader .line{
+    position: relative;
+  }
+  #loader .line #line-part1 h4 {
+    width: 50px;
+  }
+  #loader .line #line-part1 h4,
+h5 {
+  font-size: 3vmax;
+}
+#loader .line h1 {
+  font-size: 4vmax;
+  line-height: 6vmax;
+}
+#loader .line #line-part2 h5 {
+ display: none
+}
+
+/* main */
+
+#page1 #nav {
+  justify-content: end;
+}
+#navPart2 {
+ display: none;
+}
+
+#page1 {
+  width: 100%;
+  height: 60vh;
+  background-color: #151515;
+}
+.hero {
+  width: 100%;
+  /* background-color: red; */
+  margin-left: 5%;
+  overflow: hidden;
+}
+.hero:nth-child(2){
+  margin-top: 50%;
+}
+.hero h2 {
+  font-size: 5vmax;
+  font-weight: 500;
+  line-height: 5vmax;
+  text-transform: uppercase;
+}
+#hero1::before{
+  content: "01";
+  font-size: 5vw;
+  font-weight: 400;
+  font-family: silk serif;
+  position: absolute;
+  top: 35%;
+  left: 18%;
+}
+/* page2 */
+#page2 #videoContainer {
+  width: 100%;
+  height: 40vh;
+  margin-left: 0%;
+  overflow: hidden;
+}
+/* page3 */
+#page3{
+  padding-left: 0rem;
+}
+#page3 #page3head h3::before{
+  font-size: 5vw;
+
+}
+#page3 .elm .imageContainer{
+  width: 80%;
+}
+#page3 .elm #imageContainer1{
+  height: 50vh
+}
+#page3 .elm #imageContainer2{
+  height: 60vh
+}
+#page3 .elm #imageContainer3{
+  height: 60vh;
+  margin-left: 0rem ;
+  margin-top: 4rem;
+}
+#page3 .elm #imageContainer4{
+  height: 55vh;
+}
+.page3-circle{
+  display: none;
+}
+/* page4 */
+
+#page4 #page4Content h3::before{
+  display: none;
+}
+#page4 #page4Content {
+  width: 100%;
+  margin-left: 0%;
+}
+#page4 #page4Content > p {
+  font-size: 2rem;
+  width: 100%;
+  margin-top: 5%;
+}
+#page4 #page4Content #divFlex {
+  flex-direction: column;
+}
+#page4 #page4Content #divFlex img {
+  width: 100%;
+}
+#page4 #page4Content #divFlex p {
+  width: 80%;
+}
+#page4 #page4Content #blueDiv {
+  width: 100%;
+  left: 0%;
+  bottom:6%;
+}
+/* page5 */
+#page5 .elm h2{
+  font-size: 8vh;
+}
+/* footer */
+#footer #footerContent {
+  width: 100%;
+  height: fit-content;
+  margin-left: 0%;
+  padding-top: 8%;
+  padding: 2%;
+  position: relative;
+}
+#footer #flexdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  gap: 6%;
+}
+#footer #flexdiv .elm{
+  width: 100%;
+
+}
+#footer #flexdiv .elm h6{
+  font-size: 1rem;
+  margin-bottom: 1.7rem;
+  margin-top: 1.7rem;
+  }
 }
