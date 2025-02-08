@@ -1,7 +1,16 @@
+@font-face {
+  font-family: "Plain Light";
+  src: url(./fonts/plain-light-webfont.ttf);
+}
+@font-face {
+  font-family: "Silk Serif";
+  src: url(./fonts/silkserif-regularitalic-webfont.ttf);
+}
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: #fff;
   font-family: "Plain Light";
 }
@@ -33,23 +42,32 @@ body {
   overflow: hidden;
 }
 #loader .line {
-  /* background-color: red;    */
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 #loader .line #line-part1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 30px;
   margin-top: 15px;
 }
 
 #loader .line #line-part1 h4 {
-  /* margin-right: 15px; */
   width: 90px;
-  /* background-color: rgb(0, 255, 200); */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-align: right;
 }
@@ -62,14 +80,50 @@ h5 {
 #loader .line #line-part2 h5 {
   font-size: 5vw;
   text-transform: uppercase;
-  /* background-color: rgb(0, 255, 217); */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   vertical-align: top;
   margin-left: 20px;
-  animation-name: anime;
-  animation-duration: 1.6s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: anime;
+          animation-name: anime;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes anime {
+  0% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 1px #fff;
+    color: #fff;
+    font-weight: 500;
+    opacity: 1;
+  }
+  40% {
+    font-family: "Plain Light";
+    -webkit-text-stroke: 1px #fff;
+    color: #fff;
+    font-weight: 500;
+    opacity: 0;
+  }
+  75% {
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 0.5px #fff;
+    color: transparent;
+    font-weight: 500;
+    opacity: 1;
+  }
+  100% {
+    font-family: "Silk Serif";
+    -webkit-text-stroke: 0.5px #fff;
+    color: transparent;
+    font-weight: 500;
+    opacity: 0;
+  }
 }
 @keyframes anime {
   0% {
@@ -118,18 +172,29 @@ h5 {
 }
 
 #page1 #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 2.3vw 4.5vw;
-  /* background-color: red; */
   position: relative;
 }
 
 #navPart2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 3rem;
 }
 
@@ -158,8 +223,12 @@ h5 {
   left: 18%;
 }
 #hero3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #hero3 h2 {
   z-index: 1000;
@@ -182,28 +251,32 @@ h5 {
   top:0;
   left: 0;
   opacity: 0;
-  transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50% , -50%);
+      -ms-transform: translate(-50% , -50%);
+          transform: translate(-50% , -50%);
 }
 /* page 2 starts */
 #page2 {
   width: 100%;
   padding: 10% 0;
   background-color: #151515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #page2 #videoContainer {
   width: 60%;
   height: 60vh;
-  /* background-color: red; */
-  margin-left: 20%;
-  /* margin-top: 20%; */
+  /* margin-left: 20%; */
   overflow: hidden;
 }
 
 #page2 #videoContainer video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /* page2 ends */
@@ -211,12 +284,12 @@ h5 {
 #page3 {
   width: 100%;
   padding-left: 4rem;
-  /* background-color: red; */
 }
 #page3 #page3head {
   width: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
-  /* background-color: red; */
   margin-left: 25%;
   padding-top: 8%;
   position: relative;
@@ -246,19 +319,24 @@ h5 {
 
 #page3 .elm{
   width: 100%;
-  /* height: 65vh; */
-  /* background-color: red; */
   margin: 10rem 0;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 2rem;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 #page3 .elm .imageContainer {
   width: 25%;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -281,8 +359,10 @@ h5 {
 #page3 .elm .imageContainer img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 .page3-circle{
   position: relative;
@@ -290,9 +370,15 @@ h5 {
   height: 20vw;
   border: 2px solid #fff;
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
 }
 .page3-circle svg{
@@ -306,11 +392,19 @@ width: 100%;
 height: 100%;
 background-color: #fff;
 color: black;
+display: -webkit-box;
+display: -ms-flexbox;
 display: flex;
-align-items: center;
-justify-content: center;
+-webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
 scale: 0;
 border-radius: 50%;
+-webkit-transition: all ease 0.3s;
+-o-transition: all ease 0.3s;
 transition: all ease 0.3s;
 }
 .page3-circle .circle-in p{
@@ -320,8 +414,12 @@ transition: all ease 0.3s;
   max-width: 70%;
   scale: 0;
   opacity: 0;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
   transition: all ease 0.3s;
-  transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+       -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
 }
 .page3-circle:hover .circle-in{
   scale : 1;
@@ -346,8 +444,9 @@ transition: all ease 0.3s;
 
 #page4 #page4Content {
   width: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
-  /* background-color: red; */
   margin-left: 25%;
   padding-top: 8%;
   position: relative;
@@ -384,6 +483,8 @@ transition: all ease 0.3s;
 }
 #page4 #page4Content #divFlex {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 8%;
   gap: 3%;
@@ -396,6 +497,8 @@ transition: all ease 0.3s;
 }
 #page4 #page4Content #blueDiv {
   width: 45%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   padding: 6% 3%;
   background-color: #3f7df4;
@@ -405,9 +508,15 @@ transition: all ease 0.3s;
 }
 
 #page4 #page4Content #blueDiv .elm {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 4%;
   padding-bottom: 8%;
   border-bottom: 1px solid #fff;
@@ -425,8 +534,6 @@ transition: all ease 0.3s;
   font-weight: 500;
 }
 
-/* page 4 ends */
-
 /* page5 starts */
 #page5{
   width: 100%;
@@ -436,13 +543,14 @@ transition: all ease 0.3s;
 }
 
 #page5 .elm{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   white-space: nowrap;
 }
 
 #page5 .elm h2{
-  /* background-color: red; */
   margin-right: 20px;
   font-size: 13vh;
   display: inline-block;
@@ -450,10 +558,14 @@ transition: all ease 0.3s;
   color: transparent;
   font-weight: 400;
   text-transform: uppercase;
-  animation-name: anime2;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite
+  -webkit-animation-name: anime2;
+          animation-name: anime2;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite
 }
 #page5 .elm h2 span{
   font-family: silk serif;
@@ -462,18 +574,34 @@ transition: all ease 0.3s;
   font-weight: 400;
 }
 #page5 #elm2 h2 ,#page5 #elm4 h2{
-  animation-name: anime2;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: anime2;
+          animation-name: anime2;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
   animation-direction: reverse;
+}
+@-webkit-keyframes anime2 {
+  from{
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to{
+    -webkit-transform: translateX(calc(-100% - 20px) );
+            transform: translateX(calc(-100% - 20px) );
+  }
 }
 @keyframes anime2 {
   from{
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   to{
-    transform: translateX(calc(-100% - 20px) );
+    -webkit-transform: translateX(calc(-100% - 20px) );
+            transform: translateX(calc(-100% - 20px) );
   }
 }
 
@@ -486,8 +614,9 @@ transition: all ease 0.3s;
 
 #footer #footerContent {
   width: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
-  /* background-color: red; */
   margin-left: 25%;
   padding-top: 8%;
   padding-bottom: 2%;
@@ -520,6 +649,8 @@ transition: all ease 0.3s;
 
 #footer #flexdiv {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 5rem 0;
   gap: 6%;
@@ -558,12 +689,21 @@ margin-bottom: 1.7rem;
   }
   #loader {
     padding:2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   #loader .line #line-part1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-right: 30px;
     margin-top: 15px;
@@ -589,7 +729,9 @@ h5 {
 /* main */
 
 #page1 #nav {
-  justify-content: end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 #navPart2 {
  display: none;
@@ -602,7 +744,6 @@ h5 {
 }
 .hero {
   width: 100%;
-  /* background-color: red; */
   margin-left: 5%;
   overflow: hidden;
 }
@@ -674,7 +815,10 @@ h5 {
   margin-top: 5%;
 }
 #page4 #page4Content #divFlex {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 #page4 #page4Content #divFlex img {
   width: 100%;
@@ -694,6 +838,8 @@ h5 {
 /* footer */
 #footer #footerContent {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   margin-left: 0%;
   padding-top: 8%;
@@ -702,8 +848,13 @@ h5 {
 }
 #footer #flexdiv {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 5rem 0;
   gap: 6%;
 }
